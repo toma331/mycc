@@ -1,4 +1,4 @@
-#include "ast.h"
+#include "include/ast.h"
 #include <stdlib.h>
 
 Node *new_node(NodeType type, Node *left, Node *right, int value) {

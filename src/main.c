@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lexer.h"
-#include "parser.h"
-#include "codegen.h"
+#include "include/lexer.h"
+#include "include/parser.h"
+#include "include/codegen.h"
 
 int main(int argc, char **argv) {
     if (argc != 2) {
@@ -27,7 +27,8 @@ int main(int argc, char **argv) {
 
     codegen(root, "build/out.s");
     system("as -o build/out.o build/out.s");
-    printf("Скомпилировано: build/out.o готов к линковке\n");
+    system("gcc build/out.o -o result");
+    printf("compiling is done!!! \n");
 
     free(src);
     return 0;
